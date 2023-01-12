@@ -3,6 +3,7 @@ import json
 import torch
 import librosa
 import numpy as np
+import io
 
 from transformers import WhisperForConditionalGeneration
 from transformers import WhisperProcessor
@@ -29,7 +30,7 @@ def model_fn(model_dir):
 def input_fn(input_data, content_type):
     # input_data = json.loads(json_request_data)
     logger.info("Input data is processed")
-    speech_array, sampling_rate = librosa.load(file_name, sr=16000)
+    speech_array, sampling_rate = librosa.load(io.BytesIO(input_data), sr=16000)
 
     return np.asarray(speech_array)
 
