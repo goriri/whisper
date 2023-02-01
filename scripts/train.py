@@ -52,7 +52,7 @@ if __name__ == "__main__":
     parser.add_argument("--eval_batch_size", type=int, default=8)
     parser.add_argument("--warmup_steps", type=int, default=500)
     parser.add_argument("--model_name", type=str, default="openai/whisper-small")
-    parser.add_argument("--language", type=str, default="Hindi")
+    parser.add_argument("--language", type=str, default="Chinese")
     parser.add_argument("--learning_rate", type=str, default=1e-4)
     parser.add_argument("--weight_decay", type=str, default=0.005)
     parser.add_argument("--dataloader_num_workers", type=int, default=4)
